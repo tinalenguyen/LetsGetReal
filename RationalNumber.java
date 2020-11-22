@@ -6,15 +6,15 @@ public class RationalNumber extends RealNumber {
     super(0.0);
     numerator = nume;
     denominator = deno;
-
-      if (deno < 0) deno = -deno; nume = -nume;
-      if (deno == 0) nume = 0 ; deno = 1;
-    reduce();
-  }
-
-  public double getValue() {
-    return (double) (getNumerator() / getDenominator() ) ;
-
+      if (deno == 0){
+        numerator = 0 ;
+        denominator = 1;
+      }
+      reduce();
+      if (deno < 0) {
+        denominator = denominator * -1;
+        numerator = numerator *-1;
+      }
   }
 
   public int getNumerator() {
@@ -28,6 +28,11 @@ public class RationalNumber extends RealNumber {
 //return the denominator
 
     return denominator;
+
+  }
+
+  public double getValue() {
+    return (double) getNumerator() / getDenominator() ;
 
   }
 
@@ -49,15 +54,15 @@ public class RationalNumber extends RealNumber {
   public String toString() {
 //return value expressed as "3/4"
 
-    return getNumerator()+"/"+getDenominator();
+    return (getNumerator() + "/" + getDenominator());
 
   }
 
-  public static int gcd(int a , int b) {
+  private static int gcd(int a , int b) {
 //calculate the gcd of two integers using euclid's method
 //used a khan academy article for this method
-    int origa = 0;
-    if (b > a) origa = a ; a = b ; b = origa;
+    int origa = a;
+    if (b > a)  a = b ; b = origa;
     if (a == 0) return b;
     if (b == 0) return a;
 
@@ -84,8 +89,7 @@ public class RationalNumber extends RealNumber {
   public RationalNumber multiply(RationalNumber other){
 //return new rationalnumber : product of this and other
 
-    return new RationalNumber( getNumerator() * other.getNumerator() ,
-                               getDenominator() * other.getDenominator() );
+    return new RationalNumber( getNumerator() * other.getNumerator() ,getDenominator() * other.getDenominator() );
 
 
 }
@@ -110,7 +114,7 @@ public class RationalNumber extends RealNumber {
 //return a RationalNumber : this minus other
 
     return new RationalNumber((getNumerator() *other.getDenominator()) - (other.getNumerator() * getDenominator() ),
-                           getDenominator() * other.getDenominator() );
+                               getDenominator() * other.getDenominator() );
 
   }
 

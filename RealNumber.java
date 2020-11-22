@@ -17,15 +17,9 @@ public class RealNumber {
   public boolean equals(RealNumber other){
 //return true when values are within 0.001% of each other
 //if one value is 0, other must exactly be zero
-    if (other.getValue() == 0 && getValue() == 0){
-      return true;
-    }
+    if (other.getValue() == 0 && getValue() == 0 ) return true;
+    return (Math.abs(getValue() - other.getValue()) / other.getValue()) < 0.00001  ;
 
-
-    if ( (Math.abs(other.getValue() - getValue())) / other.getValue() < 0.00001 ) {
-         return true;
-       }
-    else return false;
   }
 
   public RealNumber add(RealNumber other){
