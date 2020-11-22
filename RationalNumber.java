@@ -99,7 +99,12 @@ public class RationalNumber extends RealNumber {
 
   }
 
+  public RationalNumber add(RationalNumber other){
+//return new RationalNumber : sum of this and other
 
+    return new RationalNumber((getNumerator() *other.getDenominator()) + (other.getNumerator() * getDenominator() ),
+                               getDenominator() * other.getDenominator() );
+  }
 
 
 
