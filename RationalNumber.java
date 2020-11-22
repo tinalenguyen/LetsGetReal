@@ -12,7 +12,7 @@ public class RationalNumber extends RealNumber {
   }
 
   public double getValue() {
-    return 0.0;
+    return (double) (getNumerator() / getDenominator() ) ;
 
   }
 
@@ -27,6 +27,13 @@ public class RationalNumber extends RealNumber {
 //return the denominator
 
     return denominator;
+
+  }
+
+  public RationalNumber reciprocal() {
+//return a new RationalNumber that has the same nume and deno but reversed
+
+    return new RationalNumber( getDenominator() , getNumerator() );
 
   }
 
