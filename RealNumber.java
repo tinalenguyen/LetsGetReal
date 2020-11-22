@@ -34,6 +34,12 @@ public class RealNumber {
 
     return new RealNumber( other.getValue() + getValue() );
 
+  }
+
+  public RealNumber multiply(RealNumber other){
+//return a new RealNumber: product of this and other
+
+    return new RealNumber( other.getValue() * getValue() );
 
   }
 
