@@ -106,6 +106,14 @@ public class RationalNumber extends RealNumber {
                                getDenominator() * other.getDenominator() );
   }
 
+  public RationalNumber subtract(RationalNumber other){
+//return a RationalNumber : this minus other
+
+    return new RationalNumber((getNumerator() *other.getDenominator()) - (other.getNumerator() * getDenominator() ),
+                           getDenominator() * other.getDenominator() );
+
+  }
+
 
 
 }
