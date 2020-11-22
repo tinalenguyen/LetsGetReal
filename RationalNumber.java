@@ -52,4 +52,33 @@ public class RationalNumber extends RealNumber {
 
   }
 
+  public static int gcd(int a , int b) {
+//calculate the gcd of two integers using euclid's method
+//used a khan academy article for this method
+    int origa = 0;
+    if (b > a) origa = a ; a = b ; b = origa;
+    if (a == 0) return b;
+    if (b == 0) return a;
+
+    int r = a % b;
+    while (r != 0){
+      r = a% b;
+      a = b ;
+      b = r ;
+
+    }
+
+    return a;
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
