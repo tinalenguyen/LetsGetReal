@@ -6,14 +6,15 @@ public class RationalNumber extends RealNumber {
     super(0.0);
     numerator = nume;
     denominator = deno;
-      if (deno == 0){
+
+      if (denominator == 0){
         numerator = 0 ;
         denominator = 1;
       }
       reduce();
-      if (deno < 0) {
-        denominator = denominator * -1;
-        numerator = numerator *-1;
+      if (denominator < 0) {
+        denominator *= -1;
+        numerator *= -1;
       }
   }
 
@@ -54,7 +55,7 @@ public class RationalNumber extends RealNumber {
   public String toString() {
 //return value expressed as "3/4"
 
-    return (getNumerator() + "/" + getDenominator());
+    return getNumerator() + "/" + getDenominator();
 
   }
 
@@ -62,22 +63,29 @@ public class RationalNumber extends RealNumber {
 //calculate the gcd of two integers using euclid's method
 //used a khan academy article for this method
     int origa = a;
-    if (b > a)  a = b ; b = origa;
-    if (a == 0) return b;
+    if (b > a){
+
+     a = b ;
+      b = origa;
+   }
+
     if (b == 0) return a;
 
-    int r = a % b;
-    while (r != 0){
-      r = a% b;
+
+    if (a % b == 0) return b;
+
+    int remainder = a % b;
+    while (remainder != 0){
+      remainder = a% b;
       a = b ;
-      b = r ;
+      b = remainder ;
 
     }
 
     return a;
   }
 
-  public void reduce() {
+  private void reduce() {
 //divide num and den by gcd
 //add this after construction!!!!
     int greatestCD = gcd( getNumerator(), getDenominator() );
