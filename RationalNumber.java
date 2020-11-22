@@ -9,6 +9,7 @@ public class RationalNumber extends RealNumber {
 
       if (deno < 0) deno = -deno; nume = -nume;
       if (deno == 0) nume = 0 ; deno = 1;
+    reduce();
   }
 
   public double getValue() {
@@ -71,9 +72,23 @@ public class RationalNumber extends RealNumber {
     return a;
   }
 
+  public void reduce() {
+//divide num and den by gcd
+//add this after construction!!!!
+    int greatestCD = gcd( getNumerator(), getDenominator() );
+    numerator = getNumerator() / greatestCD ;
+    denominator = getDenominator() / greatestCD ;
+
+  }
+
+  public RationalNumber multiply(RationalNumber other){
+//return new rationalnumber : product of this and other
+
+    return new RationalNumber( getNumerator() * other.getNumerator() ,
+                               getDenominator() * other.getDenominator() );
 
 
-
+}
 
 
 
