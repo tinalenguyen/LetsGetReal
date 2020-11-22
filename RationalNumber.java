@@ -90,7 +90,14 @@ public class RationalNumber extends RealNumber {
 
 }
 
+  public RationalNumber divide(RationalNumber other){
+//return new RationalNumber that is this divided by other
 
+//multiply by reciprocal
+    return new RationalNumber( getNumerator() * other.getDenominator() ,
+                               getDenominator() * other.getNumerator() );
+
+  }
 
 
 
