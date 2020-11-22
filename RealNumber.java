@@ -53,7 +53,7 @@ public class RealNumber {
   public RealNumber subtract(RealNumber other){
 //return a new RealNumber : this minus the other
 
-    return new RealNumber( getValue() / other.getValue() );
+    return new RealNumber( getValue() - other.getValue() );
 
   }
 
