@@ -43,4 +43,11 @@ public class RealNumber {
 
   }
 
+  public RealNumber divide(RealNumber other){
+//return a new RealNumber : this divided by other
+
+    return new RealNumber( getValue() / other.getValue() );
+
+  }
+
 }
