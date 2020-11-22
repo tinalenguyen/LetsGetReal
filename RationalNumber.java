@@ -45,4 +45,11 @@ public class RationalNumber extends RealNumber {
 
   }
 
+  public String toString() {
+//return value expressed as "3/4"
+
+    return getNumerator()+"/"+getDenominator();
+
+  }
+
 }
