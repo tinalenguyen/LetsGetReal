@@ -28,4 +28,13 @@ public class RealNumber {
     else return false;
   }
 
+  public RealNumber add(RealNumber other){
+//return a RealNumber that has the value of : the sum of this and other
+//other can be any RealNumber (including a RationalNumber)
+
+    return new RealNumber( other.getValue() + getValue() );
+
+
+  }
+
 }
