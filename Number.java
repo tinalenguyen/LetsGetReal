@@ -14,6 +14,18 @@ public abstract class Number{
 
   }
 
+  public boolean equals(Number other){
+//returns true when the % difference of the values are within 0.00001 of each other
+//special case: if one is exactly zero, the other must be exactly zero
+
+    if (getValue() == 0 || other.getValue() == 0 ){
+      return (getValue() == other.getValue() );
+    }
+
+    return ( Math.abs( getValue() - other.getValue() ) / getValue() <= 0.00001 );
+
+  }
+
 
 
 }
