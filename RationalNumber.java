@@ -54,7 +54,8 @@ public class RationalNumber extends RealNumber {
 
   public String toString() {
 //return value expressed as "3/4"
-
+    if (getDenominator() == 1 ) return getNumerator();
+    if (getDenominator() == 0 ) return 0;
     return getNumerator() + "/" + getDenominator();
 
   }
